@@ -17,7 +17,7 @@ init()
 
 
 class TrainsCollection:
-    header = '车次 车站 时间 历时 一等 二等 高级软卧 软卧 硬卧 硬座 无座'.split()
+    header = '车次 车站 时间 历时 商务特等 一等 二等 高级软卧 软卧 动卧 硬卧 软座 硬座 无座'.split()
 
     def __init__(self, available_trains,available_place, options):
         """查询的火车班次集合
@@ -44,13 +44,16 @@ class TrainsCollection:
                     '\n'.join([Fore.LIGHTGREEN_EX + raw_train_list[8] + Fore.RESET,
                                Fore.LIGHTRED_EX + raw_train_list[9] + Fore.RESET]),
                     duration,
-                    raw_train_list[-4] if raw_train_list[-4] else '--',
                     raw_train_list[-5] if raw_train_list[-5] else '--',
-                    raw_train_list[-14] if raw_train_list[-14] else '--',
-                    raw_train_list[-12] if raw_train_list[-12] else '--',
-                    raw_train_list[-7] if raw_train_list[-7] else '--',
                     raw_train_list[-6] if raw_train_list[-6] else '--',
+                    raw_train_list[-7] if raw_train_list[-7] else '--',
+                    raw_train_list[-16] if raw_train_list[-16] else '--',
+                    raw_train_list[-14] if raw_train_list[-14] else '--',
+                    raw_train_list[-4] if raw_train_list[-4] else '--',
                     raw_train_list[-9] if raw_train_list[-9] else '--',
+                    raw_train_list[-10] if raw_train_list[-10] else '--',
+                    raw_train_list[-8] if raw_train_list[-8] else '--',
+                    raw_train_list[-11] if raw_train_list[-11] else '--', 
                 ]
                 yield train
 
